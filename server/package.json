@@ -1,0 +1,9 @@
+{
+  "name": "kuku-fm",
+  "version": "1.0.0",
+  "description": "A RESTful API, likely built with a framework like Express.js (Node.js).",
+  "main": "src/server.js",
+  "repository": "git@github.com:asqre/kuku-FM.git",
+  "author": "Amit Anand",
+  "license": "MIT"
+}
