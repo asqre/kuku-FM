@@ -1,14 +1,14 @@
 import React from "react";
-import NavBar from "./layout/NavBar";
 import Footer from "./layout/Footer";
+import Header from "./layout/Header";
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <NavBar />
-      {children}
+    <div>
+      <Header />
+      <main className="min-h-[90vh]">{children}</main>
       <Footer />
-    </>
+    </div>
   );
 };
 
