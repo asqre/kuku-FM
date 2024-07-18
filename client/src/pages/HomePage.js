@@ -4,7 +4,9 @@ import Layout from "../components/Layout";
 const Home = () => {
   return (
     <div className="custom-scrollbar">
-      <Layout>HOME</Layout>
+      <Layout>
+        
+      </Layout>
     </div>
   )
 };
