@@ -14,7 +14,11 @@
 
 /* ==========Footer============ */
 .footer {
+  height: 10vh;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 25px;
   background: #000000;
   background: -webkit-linear-gradient(
