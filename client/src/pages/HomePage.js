@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import FilterBar from "../components/FilterBar";
 import AudiobookCard from "../components/AudiobookCard";
+import { fetchAudioBooks } from "../api/audiobookApi";
 
 const Home = () => {
   const [audioBooks, setAudioBooks] = useState([]);
@@ -10,122 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     const getAudioBooks = async () => {
-      // const data = await fetchAudioBooks();
-      // const data = [];
-      const data = [
-        {
-          id: 1,
-          title: "To Kill a Mockingbird",
-          author: "Harper Lee",
-          coverImage:
-            "https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 2,
-          title: "1984",
-          author: "George Orwell",
-          coverImage:
-            "https://m.media-amazon.com/images/I/519zR2oIlmL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 3,
-          title: "The Great Gatsby",
-          author: "F. Scott Fitzgerald",
-          coverImage:
-            "https://m.media-amazon.com/images/I/71FTb9X6wsL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 4,
-          title: "Pride and Prejudice",
-          author: "Jane Austen",
-          coverImage:
-            "https://m.media-amazon.com/images/I/71Q1tPupKjL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 1,
-          title: "To Kill a Mockingbird",
-          author: "Harper Lee",
-          coverImage:
-            "https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 2,
-          title: "1984",
-          author: "George Orwell",
-          coverImage:
-            "https://m.media-amazon.com/images/I/519zR2oIlmL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 3,
-          title: "The Great Gatsby",
-          author: "F. Scott Fitzgerald",
-          coverImage:
-            "https://m.media-amazon.com/images/I/71FTb9X6wsL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 4,
-          title: "Pride and Prejudice",
-          author: "Jane Austen",
-          coverImage:
-            "https://m.media-amazon.com/images/I/71Q1tPupKjL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 1,
-          title: "To Kill a Mockingbird",
-          author: "Harper Lee",
-          coverImage:
-            "https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 2,
-          title: "1984",
-          author: "George Orwell",
-          coverImage:
-            "https://m.media-amazon.com/images/I/519zR2oIlmL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 3,
-          title: "The Great Gatsby",
-          author: "F. Scott Fitzgerald",
-          coverImage:
-            "https://m.media-amazon.com/images/I/71FTb9X6wsL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 4,
-          title: "Pride and Prejudice",
-          author: "Jane Austen",
-          coverImage:
-            "https://m.media-amazon.com/images/I/71Q1tPupKjL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 1,
-          title: "To Kill a Mockingbird",
-          author: "Harper Lee",
-          coverImage:
-            "https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 2,
-          title: "1984",
-          author: "George Orwell",
-          coverImage:
-            "https://m.media-amazon.com/images/I/519zR2oIlmL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 3,
-          title: "The Great Gatsby",
-          author: "F. Scott Fitzgerald",
-          coverImage:
-            "https://m.media-amazon.com/images/I/71FTb9X6wsL._AC_UF1000,1000_QL80_.jpg",
-        },
-        {
-          id: 4,
-          title: "Pride and Prejudice",
-          author: "Jane Austen",
-          coverImage:
-            "https://m.media-amazon.com/images/I/71Q1tPupKjL._AC_UF1000,1000_QL80_.jpg",
-        },
-      ];
+      const data =await fetchAudioBooks();
       setAudioBooks(data);
       setFilteredAudioBooks(data);
     };
@@ -133,7 +19,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    const filteredAudioBooks = () => {
+    const applyFilters = () => {
       let filtered = audioBooks;
 
       if (filter.genre) {
@@ -157,7 +43,7 @@ const Home = () => {
       setFilteredAudioBooks(filtered);
     };
 
-    filteredAudioBooks();
+    applyFilters();
   }, [filter, audioBooks]);
 
   return (

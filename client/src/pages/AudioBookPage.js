@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import { useParams } from "react-router-dom";
-import { fetchAudioBook, submitReview } from "../api/audiobookApi"
+import { fetchAudioBooks } from "../api/audiobookApi"
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
 
@@ -16,7 +16,7 @@ const AudioBookPage = () => {
 
   useEffect(() => {
     const getAudioBook = async () => {
-      const data = await fetchAudioBook(id);
+      const data = await fetchAudioBooks();
       setAudioBook(data);
       setReviews(data.reviews);
     };
@@ -26,12 +26,12 @@ const AudioBookPage = () => {
 
   const handleReviewSubmit = async (e) => {
     e.preventDefault();
-    const review = await submitReview(id, newReview);
-    setReviews([...reviews, review]);
-    setNewReview({
-      rating: 0,
-      review: "",
-    });
+    // const review = await submitReview(id, newReview);
+    // setReviews([...reviews, review]);
+    // setNewReview({
+    //   rating: 0,
+    //   review: "",
+    // });
   };
 
   if (!audioBook) {
