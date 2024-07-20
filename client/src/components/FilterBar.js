@@ -30,9 +30,15 @@ const FilterBar = ({ setFilter }) => {
         className="p-2 border rounded w-full sm:w-auto"
       >
         <option value="">All Authors</option>
-        <option value="Author1">Author1</option>
-        <option value="Author2">Author2</option>
-        <option value="Author3">Author3</option>
+        <option value="Harper Lee">Harper Lee</option>
+        <option value="George Orwell">George Orwell</option>
+        <option value="F. Scott Fitzgerald">F. Scott Fitzgerald</option>
+        <option value="J.K. Rowling">J.K. Rowling</option>
+        <option value="Frank Herbert">Frank Herbert</option>
+        <option value="Paulo Coelho">Paulo Coelho</option>
+        <option value="J.R.R. Tolkien">J.R.R. Tolkien</option>
+        <option value="J.D. Salinger">J.D. Salinger</option>
+        <option value="Douglas Adams">Douglas Adams</option>
       </select>
       <select
         name="rating"

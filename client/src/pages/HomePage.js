@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     const getAudioBooks = async () => {
-      const data =await fetchAudioBooks();
+      const data = await fetchAudioBooks();
       setAudioBooks(data);
       setFilteredAudioBooks(data);
     };
@@ -36,7 +36,7 @@ const Home = () => {
 
       if (filter.rating) {
         filtered = filtered.filter(
-          (audioBook) => audioBook.rating === filter.rating
+          (audioBook) => audioBook.rating >= parseFloat(filter.rating)
         );
       }
 
