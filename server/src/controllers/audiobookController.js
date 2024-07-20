@@ -51,15 +51,15 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg",
         genre: "Fiction",
         description: "Set in the Depression-era Southern United States, the story follows a young girl and her father, a lawyer defending a black man accused of a crime.",
-        rating: 4.8
+        rating: 2.8
       },
       {
         title: "1984",
         author: "George Orwell",
         coverImage: "https://m.media-amazon.com/images/I/519zR2oIlmL._AC_UF1000,1000_QL80_.jpg",
-        genre: "Science Fiction",
+        genre: "Non-Fiction",
         description: "A dystopian novel set in a totalitarian society, exploring themes of mass surveillance and control.",
-        rating: 4.6
+        rating: 3.6
       },
       {
         title: "The Great Gatsby",
@@ -73,7 +73,7 @@ export const addSampleAudioBooks = async (req, res) => {
         title: "Pride and Prejudice",
         author: "Jane Austen",
         coverImage: "https://m.media-amazon.com/images/I/71Q1tPupKjL._AC_UF1000,1000_QL80_.jpg",
-        genre: "Romance",
+        genre: "Mystery",
         description: "A classic novel of manners, following the romantic entanglements of the Bennet sisters in Georgian England.",
         rating: 4.7
       },
@@ -81,7 +81,7 @@ export const addSampleAudioBooks = async (req, res) => {
         title: "The Hitchhiker's Guide to the Galaxy",
         author: "Douglas Adams",
         coverImage: "https://m.media-amazon.com/images/I/81XSN3hA5gL._AC_UF1000,1000_QL80_.jpg",
-        genre: "Science Fiction",
+        genre: "Non-Fiction",
         description: "A comedic science fiction series following the misadventures of Arthur Dent, last surviving human, through space.",
         rating: 4.5
       },
@@ -91,7 +91,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/81iqZ2HHD-L._AC_UF1000,1000_QL80_.jpg",
         genre: "Fantasy",
         description: "The first book in the Harry Potter series, introducing the young wizard and his magical world.",
-        rating: 4.9
+        rating: 1.9
       },
       {
         title: "The Catcher in the Rye",
@@ -99,7 +99,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/91HPG31dTwL._AC_UF1000,1000_QL80_.jpg",
         genre: "Fiction",
         description: "A classic coming-of-age story following the experiences of Holden Caulfield in New York City.",
-        rating: 4.3
+        rating: 2.3
       },
       {
         title: "The Hobbit",
@@ -107,15 +107,15 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/710+HcoP38L._AC_UF1000,1000_QL80_.jpg",
         genre: "Fantasy",
         description: "A fantasy novel about the quest of home-loving hobbit Bilbo Baggins to win a share of the treasure guarded by a dragon.",
-        rating: 4.7
+        rating: 3.7
       },
       {
         title: "Dune",
         author: "Frank Herbert",
-        coverImage: "https://m.media-amazon.com/images/I/81ilt4oWUwL._AC_UF1000,1000_QL80_.jpg",
-        genre: "Science Fiction",
+        coverImage: "https://upload.wikimedia.org/wikipedia/en/d/de/Dune-Frank_Herbert_%281965%29_First_edition.jpg",
+        genre: "Non-Fiction",
         description: "An epic science fiction novel set in a distant future amidst a feudal interstellar society.",
-        rating: 4.6
+        rating: 1.6
       },
       {
         title: "The Alchemist",
@@ -123,7 +123,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UF1000,1000_QL80_.jpg",
         genre: "Fiction",
         description: "A philosophical novel about a young Andalusian shepherd's journey to find his destiny.",
-        rating: 4.7
+        rating: 2.7
       }
     ];
 
