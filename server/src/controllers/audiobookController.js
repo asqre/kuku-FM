@@ -174,3 +174,30 @@ export const getAdudiobooks = async (req, res) => {
     });
   }
 };
+
+export const getAudioBookById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const audioBook = await Audiobook.findById(id);
+
+    if (!audioBook) {
+      return res.status(404).send({
+        success: false,
+        message: "Audiobook not found",
+      });
+    }
+
+    res.status(200).send({
+      success: true,
+      message: "Audiobook fetched successfully",
+      audiobook: audioBook,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Internal server error",
+      error: error.message,
+    });
+  }
+}

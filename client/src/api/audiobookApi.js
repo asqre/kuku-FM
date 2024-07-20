@@ -18,3 +18,12 @@ export const submitReview = async (id, review) => {
     throw error;
   }
 }
+
+export const fetchAudioBookById = async (id) => {
+  try {
+    const res = await axios.get(`${BASE_URL}/api/getById/${id}`);
+    return res.data.audiobook;
+  } catch (error) {
+    throw error;
+  }
+}

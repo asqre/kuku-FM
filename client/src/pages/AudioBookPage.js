@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import { useParams } from "react-router-dom";
-import { fetchAudioBooks } from "../api/audiobookApi"
+import { fetchAudioBookById, submitReview } from "../api/audiobookApi"
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
 
@@ -16,7 +16,7 @@ const AudioBookPage = () => {
 
   useEffect(() => {
     const getAudioBook = async () => {
-      const data = await fetchAudioBooks();
+      const data = await fetchAudioBookById(id);
       setAudioBook(data);
       setReviews(data.reviews);
     };
@@ -26,12 +26,12 @@ const AudioBookPage = () => {
 
   const handleReviewSubmit = async (e) => {
     e.preventDefault();
-    // const review = await submitReview(id, newReview);
-    // setReviews([...reviews, review]);
-    // setNewReview({
-    //   rating: 0,
-    //   review: "",
-    // });
+    const review = await submitReview(id, newReview);
+    setReviews([...reviews, review]);
+    setNewReview({
+      rating: 0,
+      review: "",
+    });
   };
 
   if (!audioBook) {
@@ -45,7 +45,7 @@ const AudioBookPage = () => {
         <img
           src={audioBook.coverImage}
           alt={audioBook.title}
-          className="w-full max-w-sm mb-4"
+          className="w-full max-w-[300px] mb-4"
         />
         <p className="text-xl mb-2">Author: {audioBook.author}</p>
         <p className="text-xl mb-2">Genre: {audioBook.genre}</p>

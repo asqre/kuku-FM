@@ -12,7 +12,7 @@ const AudiobookCard = ({ audiobook }) => {
       <h3 className="text-xl font-bold mb-2">{audiobook.title}</h3>
       <p className="text-lg mb-2">Author: {audiobook.author}</p>
       <Link
-        to={`/audiobooks/${audiobook.id}`}
+        to={`/audiobooks/${audiobook._id}`}
         className="text-blue-500 hover:underline"
       >
         View Details
