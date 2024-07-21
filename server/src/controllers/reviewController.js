@@ -5,7 +5,9 @@ export const getReviewsByAudioBookId = async (req, res) => {
   try {
     const { audioBookId } = req.body;
 
-    const reviews = await Review.find({ audiobookId: audioBookId });
+    const reviews = await Review.find({ audiobookId: audioBookId }).populate(
+      "user"
+    );
 
     res.status(200).send({
       success: true,

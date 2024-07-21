@@ -9,6 +9,7 @@ import {
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
 import LoginSignUp from "../components/LoginSignUp";
+import AddRating from "../components/AddRating";
 
 const AudioBookPage = () => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -20,6 +21,7 @@ const AudioBookPage = () => {
     review: "",
   });
   const [showModal, setShowModal] = useState(false);
+  const [showRating, setShowRating] = useState(false);
 
   useEffect(() => {
     const getAudioBook = async () => {
@@ -69,17 +71,35 @@ const AudioBookPage = () => {
             className="w-full max-w-[300px] mb-4"
           />
           <p className="text-xl mb-2">Author: {audioBook.author}</p>
-          <p className="text-xl mb-2">Genre: {audioBook.genre}</p>
-          <p className="text-lg mb-4">{audioBook.description}</p>
-          <h2 className="text-2xl font-bold mb-4">User Reviews</h2>
-          <ReviewList reviews={reviews} />
-          <ReviewForm
-            newReview={newReview}
-            setNewReview={setNewReview}
-            handleReviewSubmit={handleReviewSubmit}
-          />
+          <p className="text-xl mb-2" >Genre: {audioBook.genre}</p>
+          <p className="text-lg mb-4" style={{
+            fontSize: "1rem",
+            fontFamily: "sans-serif",
+            fontWeight: "200",
+          }}>{audioBook.description}</p>
+          <div className="my-10">
+            <div className="flex flex-row justify-between items-center my-4">
+              <div className="text-xl font-light mb-4 opacity-65">
+                User Reviews
+              </div>
+              <button
+                onClick={() => setShowRating(true)}
+                className="bg-red-500 text-white p-2 rounded"
+              >
+                Add Rating
+              </button>
+            </div>
+            <ReviewList reviews={reviews} />
+          </div>
         </div>
       </Layout>
+      <AddRating
+        showRating={showRating}
+        setShowRating={setShowRating}
+        newReview={newReview}
+        setNewReview={setNewReview}
+        handleReviewSubmit={handleReviewSubmit}
+      />
       <LoginSignUp showModal={showModal} setShowModal={setShowModal} />
     </>
   );
