@@ -7,7 +7,6 @@ import {
   submitReview,
 } from "../api/audiobookApi";
 import ReviewList from "../components/ReviewList";
-import ReviewForm from "../components/ReviewForm";
 import LoginSignUp from "../components/LoginSignUp";
 import AddRating from "../components/AddRating";
 
@@ -40,9 +39,6 @@ const AudioBookPage = () => {
 
   const handleReviewSubmit = async (e) => {
     e.preventDefault();
-    if (!user) {
-      return setShowModal(true);
-    }
     const payload = {
       ...newReview,
       audioBookId: id,
@@ -60,6 +56,13 @@ const AudioBookPage = () => {
     return <Layout>Loading...</Layout>;
   }
 
+  const handleShowRating = () => {
+    if (localStorage.getItem("user") === null) {
+      return setShowModal(true);
+    }
+    setShowRating(true);
+  };
+
   return (
     <>
       <Layout>
@@ -71,19 +74,24 @@ const AudioBookPage = () => {
             className="w-full max-w-[300px] mb-4"
           />
           <p className="text-xl mb-2">Author: {audioBook.author}</p>
-          <p className="text-xl mb-2" >Genre: {audioBook.genre}</p>
-          <p className="text-lg mb-4" style={{
-            fontSize: "1rem",
-            fontFamily: "sans-serif",
-            fontWeight: "200",
-          }}>{audioBook.description}</p>
+          <p className="text-xl mb-2">Genre: {audioBook.genre}</p>
+          <p
+            className="text-lg mb-4"
+            style={{
+              fontSize: "1rem",
+              fontFamily: "sans-serif",
+              fontWeight: "200",
+            }}
+          >
+            {audioBook.description}
+          </p>
           <div className="my-10">
             <div className="flex flex-row justify-between items-center my-4">
               <div className="text-xl font-light mb-4 opacity-65">
                 User Reviews
               </div>
               <button
-                onClick={() => setShowRating(true)}
+                onClick={handleShowRating}
                 className="bg-red-500 text-white p-2 rounded"
               >
                 Add Rating
