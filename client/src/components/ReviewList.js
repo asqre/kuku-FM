@@ -11,21 +11,24 @@ const ReviewList = ({ reviews }) => {
   });
 
   if (reviews.length === 0) {
-    return <p className="text-center opacity-45">No reviews yet</p>;
+    return <p className="text-center text-gray-500 italic">No reviews yet</p>;
   }
 
   return (
-    <div>
+    <div className="space-y-4">
       {sortedReviews.map((review, ind) => (
-        <div key={ind} className="p-4 border rounded mb-4 flex flex-col">
-          <div className="flex justify-between items-center mb-2">
-            <p className="font-bold">{review.user.userName}</p>
-            <p className="text-gray-500">
+        <div key={ind} className="bg-white shadow-md rounded-lg p-4 sm:p-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 space-y-2 sm:space-y-0">
+            <p className="font-bold text-lg">{review.user.userName}</p>
+            <p className="text-sm text-gray-500">
               {moment(review.createdAt).format("LLL")}
             </p>
           </div>
-          <p className="font-bold mb-2">Rating: {renderStars(review.rating)}</p>
-          <p>"{review.review}"</p>
+          <div className="flex items-center mb-2">
+            <span className="text-yellow-400 mr-1">{renderStars(review.rating)}</span>
+            <span className="text-sm text-gray-600">({review.rating}/5)</span>
+          </div>
+          <p className="text-gray-700 italic">"{review.review}"</p>
         </div>
       ))}
     </div>
