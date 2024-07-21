@@ -31,8 +31,8 @@ const ReviewForm = ({ newReview, setNewReview, handleReviewSubmit }) => {
       <div className="mb-4">
         <label className="block mb-2">Review:</label>
         <textarea
-          name="comment"
-          value={newReview.comment}
+          name="review"
+          value={newReview.review}
           onChange={handleChange}
           className="w-full p-2 border rounded"
           rows="4"

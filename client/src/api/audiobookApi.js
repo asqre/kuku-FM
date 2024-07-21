@@ -10,9 +10,9 @@ export const fetchAudioBooks = async () => {
   }
 };
 
-export const submitReview = async (id, review) => {
+export const submitReview = async (review) => {
   try {
-    const res = await axios.post(`${BASE_URL}/api/addReview/${id}`, review);
+    const res = await axios.post(`${BASE_URL}/api/reviews/submit`, review);
     return res.data;
   } catch (error) {
     throw error;
