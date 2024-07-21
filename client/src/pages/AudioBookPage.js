@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import { useParams } from "react-router-dom";
-import { fetchAudioBookById, submitReview } from "../api/audiobookApi"
+import { fetchAudioBookById, fetchReviewsByAudioBookId, submitReview } from "../api/audiobookApi"
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
 
@@ -18,9 +18,14 @@ const AudioBookPage = () => {
     const getAudioBook = async () => {
       const data = await fetchAudioBookById(id);
       setAudioBook(data);
-      setReviews(data.reviews);
     };
 
+    const getReviews = async () => {
+      const data = await fetchReviewsByAudioBookId(id);
+      setReviews(data);
+    }
+
+    getReviews();
     getAudioBook();
   }, [id]);
 

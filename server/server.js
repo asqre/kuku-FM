@@ -5,6 +5,7 @@ import cors from "cors";
 import connectDB from "./src/config/db.js";
 import audiobookRoutes from "./src/routes/audiobookRoutes.js";
 import userRoutes from "./src/routes/userRoutes.js";
+import reviewRoutes from "./src/routes/reviewRoutes.js";
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(morgan("dev"));
 
 app.use("/api", audiobookRoutes);
 app.use('/api/auth', userRoutes);
+app.use("/api/reviews", reviewRoutes);
 
 app.get("/", (req, res) => {
   res.status(200).send({
