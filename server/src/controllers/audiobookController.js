@@ -1,47 +1,5 @@
 import Audiobook from "../models/audiobookModel.js";
-import { faker } from "@faker-js/faker";
 import Review from "../models/reviewModel.js";
-
-export const addFakerAudioBooks = async (req, res) => {
-  const { count } = req.body.counts;
-
-  try {
-    const audiobooks = [];
-
-    for (let i = 0; i < count; i++) {
-      const audiobook = new Audiobook({
-        title: faker.lorem.words(3),
-        author: faker.internet.userName(),
-        genre: faker.helpers.arrayElement([
-          "Fiction",
-          "Non-fiction",
-          "Mystery",
-          "Fantasy",
-        ]),
-        description: faker.lorem.paragraph(),
-        coverImage: faker.image.avatar(),
-        rating: faker.seed.random.number(5),
-      });
-
-      audiobooks.push(audiobook);
-    }
-
-    await Audiobook.insertMany(audiobooks);
-
-    res.status(201).send({
-      success: true,
-      message: `${count} audiobooks added successfully`,
-      audiobooks: audiobooks,
-    });
-  } catch (error) {
-    console.log(error);
-    res.status(500).send({
-      success: false,
-      message: "Internal server error",
-      error: error.message,
-    });
-  }
-};
 
 export const addSampleAudioBooks = async (req, res) => {
   try {

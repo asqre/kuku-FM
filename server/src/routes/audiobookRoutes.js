@@ -1,5 +1,9 @@
 import express from "express";
-import { addFakerAudioBooks, addSampleAudioBooks, getAdudiobooks, getAudioBookById } from "../controllers/audiobookController.js";
+import {
+  addSampleAudioBooks,
+  getAdudiobooks,
+  getAudioBookById,
+} from "../controllers/audiobookController.js";
 
 const router = express.Router();
 
