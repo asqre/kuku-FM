@@ -1,5 +1,6 @@
 import Review from "../models/reviewModel.js";
 import userModel from "../models/userModel.js";
+import audiobookModel from "../models/audiobookModel.js";
 
 export const getReviewsByAudioBookId = async (req, res) => {
   try {
@@ -36,7 +37,6 @@ export const submitReview = async (req, res) => {
     }
 
     const user = await userModel.findById({ _id: userId });
-    console.log("user", user);
 
     if (!user) {
       return res.status(404).send({
@@ -53,10 +53,19 @@ export const submitReview = async (req, res) => {
 
     const newReview = await review.save();
 
+    const audiobook = await audiobookModel.findById({ _id: audioBookId });
+    const reviews = await Review.find({ audiobookId: audioBookId });
+    const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
+    const averageRating = totalRating / reviews.length;
+
+    audiobook.rating = Number(averageRating.toFixed(1));
+    await audiobook.save();
+
     res.status(201).send({
       success: true,
       message: "Review submitted successfully",
       data: newReview,
+      updatedRating: audiobook.rating,
     });
   } catch (error) {
     console.log(error);
