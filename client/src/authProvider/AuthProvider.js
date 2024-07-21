@@ -14,11 +14,12 @@ const AuthProvider = ({ children }) => {
   const login = async (userName, password) => {
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/auth/login`,
+        `${process.env.REACT_APP_API}/api/auth/login`,
         { userName, password }
       );
-      setUser(res.data.user);
-      localStorage.setItem("user", JSON.stringify(res.data.user));
+      let user = res.data.data;
+      setUser(user);
+      localStorage.setItem("user", JSON.stringify(user));
     } catch (error) {
       throw error;
     }

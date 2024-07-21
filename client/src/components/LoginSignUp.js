@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Modal from "./common/Modal";
+import { AuthContext } from "../authProvider/AuthProvider";
+import { message } from "antd";
 
 const LoginSignUp = ({ showModal, setShowModal }) => {
+  const { login } = useContext(AuthContext);
   const [auth, setAuth] = useState({
     userName: "",
     password: "",
   });
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(auth);
+    try {
+      await login(auth.userName, auth.password);
+      message.success("Login Successful");
+    } catch (error) {
+      message.error(error.message);
+    }
   };
 
   const handleClose = () => {

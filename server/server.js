@@ -4,6 +4,7 @@ import morgan from "morgan";
 import cors from "cors";
 import connectDB from "./src/config/db.js";
 import audiobookRoutes from "./src/routes/audiobookRoutes.js";
+import userRoutes from "./src/routes/userRoutes.js";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use("/api", audiobookRoutes);
+app.use('/api/auth', userRoutes);
 
 app.get("/", (req, res) => {
   res.status(200).send({
