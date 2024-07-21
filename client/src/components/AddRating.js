@@ -27,16 +27,21 @@ const AddRating = ({
       rating: rating,
     });
   };
+
+  const handleSubmit= (e) => {
+    e.preventDefault();
+    handleReviewSubmit();
+    handleClose();
+  }
   
   return (
     <>
       <Modal
         isVisible={showRating}
         onClose={handleClose}
-        onClick={handleReviewSubmit}
       >
         <div className="p-5">
-          <form onSubmit={handleReviewSubmit} className="mb-4">
+          <form onSubmit={handleSubmit} className="mb-4">
             <div className="mb-4">
               <label className="block mb-2">Rating:</label>
               <StarRating rating={newReview.rating} onRatingChange={handleRatingChange} />

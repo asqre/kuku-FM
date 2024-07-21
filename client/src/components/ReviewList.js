@@ -10,8 +10,8 @@ const ReviewList = ({ reviews }) => {
     return new Date(b.createdAt) - new Date(a.createdAt);
   });
 
-  if(reviews.length === 0) {
-    return <p className="text-center opacity-45">No reviews yet</p>
+  if (reviews.length === 0) {
+    return <p className="text-center opacity-45">No reviews yet</p>;
   }
 
   return (

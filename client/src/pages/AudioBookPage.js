@@ -38,14 +38,21 @@ const AudioBookPage = () => {
   }, [id]);
 
   const handleReviewSubmit = async (e) => {
-    e.preventDefault();
     const payload = {
       ...newReview,
       audioBookId: id,
       userId: user._id,
     };
-    const review = await submitReview(payload);
-    setReviews([...reviews, review]);
+    await submitReview(payload);
+    const newReviewWithUser = {
+      user: {
+        _id: user._id,
+        userName: user.userName,
+      },
+      ...newReview,
+      createdAt: new Date().toISOString(),
+    };
+    setReviews([newReviewWithUser, ...reviews]);
     setNewReview({
       rating: 0,
       review: "",

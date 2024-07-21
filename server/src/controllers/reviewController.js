@@ -47,7 +47,7 @@ export const submitReview = async (req, res) => {
 
     const review = new Review({
       ...req.body,
-      user: userId,
+      user: user,
       audiobookId: audioBookId,
     });
 
