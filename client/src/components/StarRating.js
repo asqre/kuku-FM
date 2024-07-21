@@ -11,7 +11,7 @@ const StarRating = ({ rating, onRatingChange }) => {
         <span
           key={value}
           className={`cursor-pointer text-2xl ${
-            value <= rating ? "text-red-500" : "text-gray-400"
+            value <= rating ? "text-yellow-400" : "text-gray-400"
           }`}
           onClick={() => handleStarClick(value)}
         >

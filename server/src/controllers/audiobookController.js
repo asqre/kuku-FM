@@ -1,5 +1,6 @@
 import Audiobook from "../models/audiobookModel.js";
 import { faker } from "@faker-js/faker";
+import Review from "../models/reviewModel.js";
 
 export const addFakerAudioBooks = async (req, res) => {
   const { count } = req.body.counts;
@@ -186,6 +187,13 @@ export const getAudioBookById = async (req, res) => {
         message: "Audiobook not found",
       });
     }
+
+    const reviews = await Review.find({ audiobookId: id });
+    const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
+    const averageRating = reviews.length > 0 ? totalRating / reviews.length : 0;
+
+    audioBook.rating = Number(averageRating.toFixed(1));
+    await audioBook.save();
 
     res.status(200).send({
       success: true,

@@ -9,6 +9,7 @@ import {
 import ReviewList from "../components/ReviewList";
 import LoginSignUp from "../components/LoginSignUp";
 import AddRating from "../components/AddRating";
+import Rating from "../components/Rating";
 
 const AudioBookPage = () => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -57,6 +58,9 @@ const AudioBookPage = () => {
       rating: 0,
       review: "",
     });
+
+    const updatedAudioBook = await fetchAudioBookById(id);
+    setAudioBook(updatedAudioBook);
   };
 
   if (!audioBook) {
@@ -73,33 +77,41 @@ const AudioBookPage = () => {
   return (
     <>
       <Layout>
-        <div className="container mx-auto p-4">
-          <h1 className="text-3xl font-bold mb-4">{audioBook.title}</h1>
-          <img
-            src={audioBook.coverImage}
-            alt={audioBook.title}
-            className="w-full max-w-[300px] mb-4"
-          />
-          <p className="text-xl mb-2">Author: {audioBook.author}</p>
-          <p className="text-xl mb-2">Genre: {audioBook.genre}</p>
-          <p
-            className="text-lg mb-4"
-            style={{
-              fontSize: "1rem",
-              fontFamily: "sans-serif",
-              fontWeight: "200",
-            }}
-          >
-            {audioBook.description}
-          </p>
-          <div className="my-10">
-            <div className="flex flex-row justify-between items-center my-4">
-              <div className="text-xl font-light mb-4 opacity-65">
-                User Reviews
+        <div className="container mx-auto p-4 max-w-4xl">
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="md:flex">
+              <div className="md:flex-shrink-0">
+                <img
+                  src={audioBook.coverImage}
+                  alt={audioBook.title}
+                  className="h-48 w-full object-cover md:w-48"
+                />
               </div>
+              <div className="p-8">
+                <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                  {audioBook.genre}
+                </div>
+                <h1 className="mt-1 text-3xl font-bold text-gray-900 leading-tight">
+                  {audioBook.title}
+                </h1>
+                <p className="mt-2 text-gray-600">By {audioBook.author}</p>
+                <div className="mt-4 flex items-center">
+                  <Rating rating={audioBook.rating} />
+                  <span className="ml-2 text-gray-600">
+                    ({audioBook.rating.toFixed(1)})
+                  </span>
+                </div>
+                <p className="mt-4 text-gray-500">{audioBook.description}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">User Reviews</h2>
               <button
                 onClick={handleShowRating}
-                className="bg-red-500 text-white p-2 rounded"
+                className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded transition duration-300"
               >
                 Add Rating
               </button>
