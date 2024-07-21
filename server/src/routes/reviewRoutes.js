@@ -3,7 +3,7 @@ import { getReviewsByAudioBookId, submitReview } from '../controllers/reviewCont
 
 const router = express.Router();
 
-router.get('/:id', getReviewsByAudioBookId);
+router.post('/get', getReviewsByAudioBookId);
 router.post('/submit', submitReview);
 
 export default router;

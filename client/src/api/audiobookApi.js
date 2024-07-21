@@ -30,7 +30,7 @@ export const fetchAudioBookById = async (id) => {
 
 export const fetchReviewsByAudioBookId = async (id) => {
   try {
-    const res = await axios.get(`${BASE_URL}/api/reviews/${id}`);
+    const res = await axios.post(`${BASE_URL}/api/reviews/get`, {audioBookId: id});
     return res.data.data;
   } catch (error) {
     throw error;

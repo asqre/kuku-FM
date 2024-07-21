@@ -3,10 +3,9 @@ import userModel from "../models/userModel.js";
 
 export const getReviewsByAudioBookId = async (req, res) => {
   try {
-    const { audioBookId } = req.params;
-    const reviews = await Review.find({ audiobookId: audioBookId }).populate(
-      "user"
-    );
+    const { audioBookId } = req.body;
+
+    const reviews = await Review.find({ audiobookId: audioBookId });
 
     res.status(200).send({
       success: true,
@@ -34,7 +33,7 @@ export const submitReview = async (req, res) => {
       });
     }
 
-    const user = await userModel.findById({_id: userId});
+    const user = await userModel.findById({ _id: userId });
     console.log("user", user);
 
     if (!user) {
