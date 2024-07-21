@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { message } from "antd";
 
 export const AuthContext = createContext();
 
@@ -20,6 +21,7 @@ const AuthProvider = ({ children }) => {
       let user = res.data.data;
       setUser(user);
       localStorage.setItem("user", JSON.stringify(user));
+      message.success(res.data.message);
     } catch (error) {
       throw error;
     }

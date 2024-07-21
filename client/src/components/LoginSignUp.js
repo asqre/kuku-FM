@@ -14,7 +14,7 @@ const LoginSignUp = ({ showModal, setShowModal }) => {
     e.preventDefault();
     try {
       await login(auth.userName, auth.password);
-      message.success("Login Successful");
+      setShowModal(false);
     } catch (error) {
       message.error(error.message);
     }
