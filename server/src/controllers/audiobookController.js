@@ -10,7 +10,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/71FxgtFKcQL._AC_UF1000,1000_QL80_.jpg",
         genre: "Fiction",
         description: "Set in the Depression-era Southern United States, the story follows a young girl and her father, a lawyer defending a black man accused of a crime.",
-        rating: 2.8
+        rating: 0.0
       },
       {
         title: "1984",
@@ -18,7 +18,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/519zR2oIlmL._AC_UF1000,1000_QL80_.jpg",
         genre: "Non-Fiction",
         description: "A dystopian novel set in a totalitarian society, exploring themes of mass surveillance and control.",
-        rating: 3.6
+        rating: 0.0
       },
       {
         title: "The Great Gatsby",
@@ -26,7 +26,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/71FTb9X6wsL._AC_UF1000,1000_QL80_.jpg",
         genre: "Fiction",
         description: "A tale of the American Dream set in the Roaring Twenties, exploring themes of wealth, love, and social status.",
-        rating: 4.5
+        rating: 0.0
       },
       {
         title: "Pride and Prejudice",
@@ -34,7 +34,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/71Q1tPupKjL._AC_UF1000,1000_QL80_.jpg",
         genre: "Mystery",
         description: "A classic novel of manners, following the romantic entanglements of the Bennet sisters in Georgian England.",
-        rating: 4.7
+        rating: 0.0
       },
       {
         title: "The Hitchhiker's Guide to the Galaxy",
@@ -42,7 +42,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/81XSN3hA5gL._AC_UF1000,1000_QL80_.jpg",
         genre: "Non-Fiction",
         description: "A comedic science fiction series following the misadventures of Arthur Dent, last surviving human, through space.",
-        rating: 4.5
+        rating: 0.0
       },
       {
         title: "Harry Potter and the Sorcerer's Stone",
@@ -50,7 +50,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/81iqZ2HHD-L._AC_UF1000,1000_QL80_.jpg",
         genre: "Fantasy",
         description: "The first book in the Harry Potter series, introducing the young wizard and his magical world.",
-        rating: 1.9
+        rating: 0.0
       },
       {
         title: "The Catcher in the Rye",
@@ -58,7 +58,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/91HPG31dTwL._AC_UF1000,1000_QL80_.jpg",
         genre: "Fiction",
         description: "A classic coming-of-age story following the experiences of Holden Caulfield in New York City.",
-        rating: 2.3
+        rating: 0.0
       },
       {
         title: "The Hobbit",
@@ -66,7 +66,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/710+HcoP38L._AC_UF1000,1000_QL80_.jpg",
         genre: "Fantasy",
         description: "A fantasy novel about the quest of home-loving hobbit Bilbo Baggins to win a share of the treasure guarded by a dragon.",
-        rating: 3.7
+        rating: 0.0
       },
       {
         title: "Dune",
@@ -74,7 +74,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://upload.wikimedia.org/wikipedia/en/d/de/Dune-Frank_Herbert_%281965%29_First_edition.jpg",
         genre: "Non-Fiction",
         description: "An epic science fiction novel set in a distant future amidst a feudal interstellar society.",
-        rating: 1.6
+        rating: 0.0
       },
       {
         title: "The Alchemist",
@@ -82,7 +82,7 @@ export const addSampleAudioBooks = async (req, res) => {
         coverImage: "https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UF1000,1000_QL80_.jpg",
         genre: "Fiction",
         description: "A philosophical novel about a young Andalusian shepherd's journey to find his destiny.",
-        rating: 2.7
+        rating: 0.0
       }
     ];
 
