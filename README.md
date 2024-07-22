@@ -70,6 +70,25 @@ The backend provides the following RESTful API endpoints:
    - Deploy the built files to a static hosting service (e.g., Firebase, Netlify, Vercel)
    - Configure the deployed frontend to use the backend API URL
 
+## Screenshots
+
+Here are some screenshots of the application:
+
+### Home Page
+![Home Page](./screenshots/home_page.png)
+*Browse audiobooks with filtering options*
+
+### Audiobook Details
+![Audiobook Details](./screenshots/audiobook_details.png)
+*View detailed information about an audiobook*
+
+### Review Submission
+![Review Submission](./screenshots/review_submission.png)
+*Submit a review for an audiobook*
+
+## Live Demo
+You can access a live demo of the application here: [Audiobook Web App Demo](https://kuku-fm-assignment.web.app/)
+
 ## Getting Started
 
 To run this project locally:
