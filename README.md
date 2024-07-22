@@ -23,10 +23,12 @@ This web application allows users to browse audiobooks, view details, and submit
 ## Technology Stack
 
 ### Frontend
+
 - React.js
 - Tailwind CSS
 
 ### Backend
+
 - Node.js
 - Express.js
 - MongoDB
@@ -46,6 +48,7 @@ The application follows a client-server architecture:
 The backend provides the following RESTful API endpoints:
 
 - `GET /api/audiobooks`: Retrieve a list of audiobooks
+
   - Query parameters:
     - `page`: Page number (default: 1)
     - `limit`: Number of items per page (default: 10)
@@ -57,6 +60,7 @@ The backend provides the following RESTful API endpoints:
 - `GET /api/audiobooks/:id`: Retrieve details of a specific audiobook
 
 - `POST /api/reviews`: Submit a new review
+
   - Body: `{ audiobookId, rating, review, userId }`
 
 - `GET /api/reviews/:audiobookId`: Retrieve reviews for a specific audiobook
@@ -64,6 +68,7 @@ The backend provides the following RESTful API endpoints:
 ## Deployment Steps
 
 1. **Backend Deployment**:
+
    - Set up a MongoDB database (e.g., MongoDB Atlas)
    - Deploy the Node.js application to a hosting service (e.g., Heroku, DigitalOcean)
    - Set environment variables for database connection and other configurations
@@ -77,4 +82,13 @@ The backend provides the following RESTful API endpoints:
 
 To run this project locally:
 
-1. Clone the repository:
+1. Clone the repository
+
+2. Install dependencies in both client and server folder.
+
+3. Start the server.
+
+```
+cd server
+yarn client
+```
