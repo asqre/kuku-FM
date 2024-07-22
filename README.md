@@ -92,6 +92,7 @@ Here are some screenshots of the application:
 
 ## Live Demo
 You can access a live demo of the application here: [Audiobook Web App Demo](https://kuku-fm-assignment.web.app/)
+NOTE: The frontend is deployed. We are working on deploying the server as soon as possible.
 
 ## Getting Started
 
