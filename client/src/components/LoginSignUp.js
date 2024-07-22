@@ -4,7 +4,8 @@ import { AuthContext } from "../authProvider/AuthProvider";
 import { message } from "antd";
 
 const LoginSignUp = ({ showModal, setShowModal }) => {
-  const { login } = useContext(AuthContext);
+  const { login, signup } = useContext(AuthContext);
+  const [isLogin, setIsLogin] = useState(true);
   const [auth, setAuth] = useState({
     userName: "",
     password: "",
@@ -29,6 +30,11 @@ const LoginSignUp = ({ showModal, setShowModal }) => {
     setAuth({ ...auth, [name]: value });
   };
 
+  const toggleMode = () => {
+    setIsLogin(!isLogin);
+    setAuth({ userName: "", password: ""});
+  };
+
   return (
     <>
       <Modal isVisible={showModal} onClose={handleClose} onClick={handleLogin}>
@@ -36,18 +42,17 @@ const LoginSignUp = ({ showModal, setShowModal }) => {
           onSubmit={handleLogin}
           className="flex flex-col items-center justify-center gap-5 my-6"
         >
-          <h4 className="title">LOGIN FORM</h4>
+          <h4 className="title">{isLogin ? "LOGIN" : "SIGN UP"}</h4>
 
-          <div className="mb-3">
+          <div className="mb-3 px-8">
             <input
               name="userName"
-              type="userName"
+              type="text"
               autoFocus
               value={auth.userName}
               onChange={handleChange}
-              className="p-2 border border-gray-300 rounded"
-              id="exampleInputEmail1"
-              placeholder="Enter Your Email"
+              className="p-2 border border-gray-300 rounded w-[250px]"
+              placeholder="Enter Your Username"
               required
             />
           </div>
@@ -57,16 +62,26 @@ const LoginSignUp = ({ showModal, setShowModal }) => {
               type="password"
               value={auth.password}
               onChange={handleChange}
-              className="p-2 border border-gray-300 rounded"
-              id="exampleInputPassword1"
+              className="p-2 border border-gray-300 rounded w-[250px]"
               placeholder="Enter Your Password"
               required
             />
           </div>
 
           <button type="submit" className="bg-blue-400 text-white rounded px-3">
-            LOGIN
+            {isLogin ? "LOGIN" : "SIGN UP"}
           </button>
+
+          <p>
+            {isLogin ? "Don't have an account?" : "Already have an account?"}
+            <button
+              type="button"
+              onClick={toggleMode}
+              className="text-blue-500 ml-2"
+            >
+              {isLogin ? "Sign Up" : "Login"}
+            </button>
+          </p>
         </form>
       </Modal>
     </>
