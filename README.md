@@ -75,16 +75,20 @@ The backend provides the following RESTful API endpoints:
 Here are some screenshots of the application:
 
 ### Home Page
-![Home Page](./screenshots/home_page.png)
+![Home Page](https://github.com/user-attachments/assets/b571bc2a-4049-495e-9358-f79974b6d410)
 *Browse audiobooks with filtering options*
 
 ### Audiobook Details
-![Audiobook Details](./screenshots/audiobook_details.png)
+![image](https://github.com/user-attachments/assets/066c1340-67af-4417-9031-1e075f5a5e79)
 *View detailed information about an audiobook*
 
 ### Review Submission
-![Review Submission](./screenshots/review_submission.png)
+![image](https://github.com/user-attachments/assets/1b9d9e1d-c4cc-40cd-9e25-b5c6c2712232)
 *Submit a review for an audiobook*
+
+### Login Modal
+![image](https://github.com/user-attachments/assets/65198e68-4c41-45f0-a478-e96fcf819f2d)
+
 
 ## Live Demo
 You can access a live demo of the application here: [Audiobook Web App Demo](https://kuku-fm-assignment.web.app/)
