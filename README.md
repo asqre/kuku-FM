@@ -49,14 +49,6 @@ The backend provides the following RESTful API endpoints:
 
 - `GET /api/audiobooks`: Retrieve a list of audiobooks
 
-  - Query parameters:
-    - `page`: Page number (default: 1)
-    - `limit`: Number of items per page (default: 10)
-    - `sort`: Field to sort by (default: 'title')
-    - `order`: Sort order ('asc' or 'desc', default: 'asc')
-    - `genre`: Filter by genre
-    - `search`: Search in title and author fields
-
 - `GET /api/audiobooks/:id`: Retrieve details of a specific audiobook
 
 - `POST /api/reviews`: Submit a new review
@@ -70,12 +62,12 @@ The backend provides the following RESTful API endpoints:
 1. **Backend Deployment**:
 
    - Set up a MongoDB database (e.g., MongoDB Atlas)
-   - Deploy the Node.js application to a hosting service (e.g., Heroku, DigitalOcean)
+   - Deploy the Node.js application to a hosting service (e.g., Firebase, Heroku, DigitalOcean)
    - Set environment variables for database connection and other configurations
 
 2. **Frontend Deployment**:
-   - Build the React application: `npm run build`
-   - Deploy the built files to a static hosting service (e.g., Netlify, Vercel)
+   - Build the React application: `yarn build`
+   - Deploy the built files to a static hosting service (e.g., Firebase, Netlify, Vercel)
    - Configure the deployed frontend to use the backend API URL
 
 ## Getting Started
@@ -89,6 +81,6 @@ To run this project locally:
 3. Start the server.
 
 ```
-cd server
-yarn client
+    cd server
+    yarn client
 ```
