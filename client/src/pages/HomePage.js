@@ -3,17 +3,21 @@ import Layout from "../components/Layout";
 import FilterBar from "../components/FilterBar";
 import AudiobookCard from "../components/AudiobookCard";
 import { fetchAudioBooks } from "../api/audiobookApi";
+import { Spin } from 'antd';
 
 const Home = () => {
   const [audioBooks, setAudioBooks] = useState([]);
   const [filteredAudioBooks, setFilteredAudioBooks] = useState([]);
   const [filter, setFilter] = useState({ genre: "", author: "", rating: "" });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getAudioBooks = async () => {
+      setLoading(true);
       const data = await fetchAudioBooks();
       setAudioBooks(data);
       setFilteredAudioBooks(data);
+      setLoading(false);
     };
     getAudioBooks();
   }, []);
@@ -54,8 +58,8 @@ const Home = () => {
 
           <FilterBar setFilter={setFilter} />
 
-          {filteredAudioBooks.length === 0 ? (
-            <p className="text-center mt-4">No audio books found</p>
+          {loading ? (
+            <div className="flex w-[100%] h-[100%] justify-center items-center"><Spin/></div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
               {filteredAudioBooks.map((audioBook) => (

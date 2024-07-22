@@ -10,6 +10,7 @@ import ReviewList from "../components/ReviewList";
 import LoginSignUp from "../components/LoginSignUp";
 import AddRating from "../components/AddRating";
 import Rating from "../components/Rating";
+import { Spin } from "antd";
 
 const AudioBookPage = () => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -64,7 +65,13 @@ const AudioBookPage = () => {
   };
 
   if (!audioBook) {
-    return <Layout>Loading...</Layout>;
+    return (
+      <Layout>
+        <div className="flex w-[100%] h-[500px] justify-center items-center">
+          <Spin />
+        </div>
+      </Layout>
+    );
   }
 
   const handleShowRating = () => {
