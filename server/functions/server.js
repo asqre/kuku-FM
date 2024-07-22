@@ -18,18 +18,17 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use("/api", audiobookRoutes);
-app.use('/api/auth', userRoutes);
+app.use("/api/auth", userRoutes);
 app.use("/api/reviews", reviewRoutes);
 
 app.get("/", (req, res) => {
-  res.status(200).send({
-    success: true,
-    message: "<h1>Welcome to the Audiobook API</h1>",
-  });
+  res.status(200).send(`<h1>Welcome to the Audiobook API</h1>`);
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.FB_PORT || 8080;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+export default app;

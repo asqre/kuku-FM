@@ -1,0 +1,42 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:asqre/kuku-FM.git",
+  "author": "Amit Anand",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "frontend/client": "cd ../../client && yarn start",
+    "client": "concurrently \"yarn server\" \"yarn frontend/client\""
+  },
+  "engines": {
+    "node": "18"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.0",
+    "bcrypt": "^5.1.1",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "faker": "^6.6.6",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4",
+    "slugify": "^1.6.6"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}

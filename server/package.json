@@ -1,29 +1,5 @@
 {
-  "name": "kuku-fm",
-  "version": "1.0.0",
-  "description": "A RESTful API, likely built with a framework like Express.js (Node.js).",
-  "main": "server.js",
-  "repository": "git@github.com:asqre/kuku-FM.git",
-  "author": "Amit Anand",
-  "license": "MIT",
-  "type": "module",
-  "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "frontend/client": "cd ../client && yarn start",
-    "client": "concurrently \"yarn server\" \"yarn frontend/client\""
-  },
   "dependencies": {
-    "bcrypt": "^5.1.1",
-    "concurrently": "^8.2.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "faker": "^6.6.6",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.5.1",
-    "morgan": "^1.10.0",
-    "nodemon": "^3.1.4",
-    "slugify": "^1.6.6"
+    "firebase-tools": "^13.13.3"
   }
 }
